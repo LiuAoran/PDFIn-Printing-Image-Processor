@@ -15,6 +15,11 @@ namespace PDFIn.Helper
             Image
         }
 
+        /// <summary>
+        /// 指定文件类型，打开文件浏览器，读取文件
+        /// </summary>
+        /// <param name="fileType">文件类型枚举</param>
+        /// <returns>设置成功则返回文件绝对路径，反之返回string.empty</returns>
         public static string GetFilePathOrEmpty(FileType fileType)
         {
             string selectedFilePath = string.Empty;

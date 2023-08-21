@@ -23,7 +23,7 @@ namespace PDFIn.ViewModel
 
         private void OpenFile()
         {
-            if (!(OpenFileHelper.GetFilePathOrEmpty() == string.Empty))
+            if (!(OpenFileHelper.GetFilePathOrEmpty(OpenFileHelper.FileType.PDF) == string.Empty))
             {
 
             }

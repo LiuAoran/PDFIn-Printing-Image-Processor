@@ -13,9 +13,4 @@
     <PackageReference Include="MuPDFCore" Version="1.7.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="UserControl\" />
-    <Folder Include="Asset\" />
-  </ItemGroup>
-
 </Project>
