@@ -1,5 +1,4 @@
-﻿using MuPDFCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,21 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PDFIn
+namespace PDFIn.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// StartWindowView.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StartWindowView : Window
     {
-        public MainWindow()
+        public StartWindowView()
         {
             InitializeComponent();
-            using MuPDFContext muPDFContext = new MuPDFContext();//Open a PDF document
-            using MuPDFDocument document = new MuPDFDocument(muPDFContext, "path/to/document.pdf");
         }
     }
 }
