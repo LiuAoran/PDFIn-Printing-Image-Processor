@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PDFIn.Asset;
+using PDFIn.Manager;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +19,9 @@ namespace PDFIn.View
     /// <summary>
     /// MainWindowView.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindowView : Window
+    public partial class MainWindow : Window
     {
-        public MainWindowView()
+        public MainWindow()
         {
             InitializeComponent();
         }

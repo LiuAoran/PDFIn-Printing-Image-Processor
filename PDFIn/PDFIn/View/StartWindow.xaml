@@ -1,16 +1,22 @@
-﻿<Window x:Class="PDFIn.View.StartWindowView"
+﻿<Window x:Class="PDFIn.View.StartWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PDFIn.View"
         xmlns:vm="clr-namespace:PDFIn.ViewModel"
+        xmlns:wm="clr-namespace:PDFIn.Manager"
         mc:Ignorable="d"
-        Title="PDFIn" Height="300" Width="600">
+        Title="PDFIn"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Height="350"
+        Width="600"
+        wm:WindowCloseBehavior.CloseWindow="{Binding ToClose}" >
     <Window.DataContext>
         <vm:StartWindowViewModel></vm:StartWindowViewModel>
     </Window.DataContext>
-    <Grid>
+    <Grid x:Name="StartGd" Height="300"  Width="600">
         <Button Style="{StaticResource RC.PassButtonStyle}" Height="40" Width="300" Content="Input PDF (Ctrl+o)" Command="{Binding OpenFileCommand}"></Button>
     </Grid>
 </Window>

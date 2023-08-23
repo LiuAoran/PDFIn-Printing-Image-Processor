@@ -23,7 +23,7 @@ namespace PDFIn.Helper
         public static string GetFilePathOrEmpty(FileType fileType)
         {
             string selectedFilePath = string.Empty;
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+            OpenFileDialog openFileDialog = new();
             if (fileType == FileType.PDF)
             {
                 openFileDialog.Filter = "PDF files (*.pdf)|*.pdf";

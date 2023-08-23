@@ -1,4 +1,7 @@
-﻿using System;
+﻿using PDFIn.Asset;
+using PDFIn.Manager;
+using PDFIn.View;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +16,14 @@ namespace PDFIn
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            ShutdownMode = ShutdownMode.OnExplicitShutdown;
+
+            WindowManager.Regitster<StartWindow>(StaticName.StartWindowName);
+            WindowManager.Regitster<MainWindow>(StaticName.MainWindowName);
+
+        }
     }
 }
