@@ -17,6 +17,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Xml.Linq;
+using System.IO;
+using PDFIn.Messenger;
 
 namespace PDFIn.ViewModel
 {
@@ -25,15 +27,20 @@ namespace PDFIn.ViewModel
         [ObservableProperty]
         private bool _toClose;
 
+        public StartWindowViewModel()
+        {
+            
+        }
+
         [RelayCommand]
         private void OpenFile()
         {
             string filePath = OpenFileHelper.GetFilePathOrEmpty(OpenFileHelper.FileType.PDF);
             if (filePath != string.Empty)
             {
+                ToClose = true;
                 WindowManager.Show(StaticName.MainWindowName);
-                WeakReferenceMessenger.Default.Send(new ValueChangedMessage<string>(filePath));
-                ToClose = true; 
+                WeakReferenceMessenger.Default.Send(new FilePathMessenger(filePath));
             }
         }
     }
