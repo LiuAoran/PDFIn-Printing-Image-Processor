@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PDFIn.View"
         xmlns:vm="clr-namespace:PDFIn.ViewModel"
-        xmlns:wm="clr-namespace:PDFIn.Manager"
+        xmlns:manager="clr-namespace:PDFIn.Manager"
         mc:Ignorable="d"
         Title="PDFIn"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Height="350"
         Width="600"
-        wm:WindowCloseBehavior.CloseWindow="{Binding ToClose}" >
+        manager:WindowCloseBehavior.CloseWindow="{Binding ToClose}" >
     <Window.DataContext>
         <vm:StartWindowViewModel></vm:StartWindowViewModel>
     </Window.DataContext>

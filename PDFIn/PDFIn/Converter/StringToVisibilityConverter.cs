@@ -9,19 +9,27 @@ using System.Windows;
 
 namespace PDFIn.Converter
 {
-    class HeightToCornerRadiusConverter : IValueConverter
+    [ValueConversion(typeof(string), typeof(Visibility))]
+    class StringToVisibilityConverter : IValueConverter
     {
+        #region IValueConverter Members
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            double height = (double)value;
-            double cornerRadius = height / 8;
-
-            return new CornerRadius(cornerRadius, cornerRadius, cornerRadius, cornerRadius);
+            if ((value as string) == string.Empty)
+            {
+                return Visibility.Visible;
+            }
+            else
+            {
+                return Visibility.Collapsed;
+            }
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotSupportedException();
+            return null;
         }
+        #endregion
+
     }
 }

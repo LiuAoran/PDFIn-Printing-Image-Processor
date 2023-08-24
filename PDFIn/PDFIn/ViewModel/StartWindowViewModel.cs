@@ -19,6 +19,7 @@ using System.Windows.Input;
 using System.Xml.Linq;
 using System.IO;
 using PDFIn.Messenger;
+using iText.Kernel.Pdf;
 
 namespace PDFIn.ViewModel
 {
@@ -38,6 +39,12 @@ namespace PDFIn.ViewModel
             string filePath = OpenFileHelper.GetFilePathOrEmpty(OpenFileHelper.FileType.PDF);
             if (filePath != string.Empty)
             {
+                PdfReader reader = new PdfReader(filePath);
+                if (reader.IsEncrypted())
+                {
+
+                }
+
                 ToClose = true;
                 WindowManager.Show(StaticName.MainWindowName);
                 WeakReferenceMessenger.Default.Send(new FilePathMessenger(filePath));
