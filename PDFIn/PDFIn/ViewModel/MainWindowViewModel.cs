@@ -32,7 +32,7 @@ namespace PDFIn.ViewModel
 
         private void InitPDFDocument(string filePath)
         {
-            document = new PdfDocument(new PdfWriter(filePath));
+            document = new PdfDocument(new PdfReader(filePath));
         }
     }
 }

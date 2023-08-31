@@ -10,5 +10,6 @@ namespace PDFIn.Asset
     {
         public static readonly string StartWindowName = "StartWindow";
         public static readonly string MainWindowName = "MainWindow";
+        public static readonly string PasswordDialogName = "PasswordDialog";
     }
 }
