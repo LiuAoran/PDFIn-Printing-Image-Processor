@@ -39,23 +39,23 @@ namespace PDFIn.ViewModel
             string filePath = OpenFileHelper.GetFilePathOrEmpty(OpenFileHelper.FileType.PDF);
             if (filePath != string.Empty)
             {
-                PdfReader reader = new(filePath);
-                PdfDocument document = new(reader);
-                try
-                {
-                    if (reader.IsEncrypted())
-                    {
-                        WindowManager.Show(StaticName.PasswordDialogName);
-                        WeakReferenceMessenger.Default.Send(new PdfReaderMessenger(reader));
-                    }
-                }
-                catch
-                {
+                //PdfReader reader = new(filePath);
+                //PdfDocument document = new(reader);
+                //try
+                //{
+                //    if (reader.IsEncrypted())
+                //    {
+                //        WindowManager.Show(StaticName.PasswordDialogName);
+                //        WeakReferenceMessenger.Default.Send(new PdfReaderMessenger(reader));
+                //    }
+                //}
+                //catch
+                //{
 
-                }
+                //}
                 
-                reader.Close();
-                document.Close();
+                //reader.Close();
+                //document.Close();
                 ToClose = true;
                 WindowManager.Show(StaticName.MainWindowName);
                 WeakReferenceMessenger.Default.Send(new FilePathMessenger(filePath));

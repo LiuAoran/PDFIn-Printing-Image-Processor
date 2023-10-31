@@ -12,6 +12,27 @@
         <vm:MainWindowViewModel></vm:MainWindowViewModel>
     </Window.DataContext>
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid  x:Name="ImageGd" ClipToBounds="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Button Height="32" Width="60"  Command="{Binding ZoomOutCommand}"> - </Button>
+                <Button Height="32" Width="60"  Command="{Binding ZoomInCommand}"> + </Button>
+            </StackPanel>
+            <ScrollViewer Grid.Row="1" Name="ImageSv" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Background="#1A000000" >
+                <Image x:Name="Image" Source="{Binding ImageSource}" Stretch="None"></Image>
+            </ScrollViewer>
+            <StackPanel Orientation="Horizontal"  Grid.Row="2">
+                <Button Height="32" Width="60"  Command="{Binding PrePageCommand}">pre</Button>
+                <Button Height="32" Width="60"  Command="{Binding NextPageCommand}">next</Button>
+            </StackPanel> 
+        </Grid>
     </Grid>
 </Window>
